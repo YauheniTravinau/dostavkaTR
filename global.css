@@ -1,0 +1,178 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #000; /* черный цвет текста */
+    background-color: #fff; /* белый цвет фона */
+}
+
+.calculator {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.item {
+    margin-bottom: 10px;
+}
+
+input[type="number"] {
+    width: 70px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.quantity-btn {
+    background-color: #555; /* серый цвет для кнопок */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.add-item {
+    background-color: #333; /* более темный серый цвет для кнопки "+" */
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.currency-selector {
+    margin-top: 20px;
+}
+
+/* Анимация для добавления элемента */
+@keyframes scale-up {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.added-item {
+    animation: scale-up 0.2s ease;
+}
+
+/* Стили для выбора валюты */
+.currency-selector input[type="radio"] {
+    display: none;
+}
+
+.currency-selector label {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #ccc; /* серый цвет для неактивных кнопок выбора валюты */
+    border: 1px solid #666; /* более темный серый цвет для рамки */
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.currency-selector input[type="radio"]:checked + label {
+    background-color: #000; /* черный цвет для активной кнопки выбора валюты */
+    color: #fff;
+}
+
+.information {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы вертикально */
+    align-items: center;
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.hidden {
+    display: none;
+}
+
+/**/
+.converter {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+input, select, button {
+    margin: 10px;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/**/
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+}
+
+.container input[type="number"] {
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#vatAmount {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Медиа-запрос для устройств с шириной экрана меньше 768px (таких как планшеты) */
+@media screen and (max-width: 768px) {
+    .calculator, .currency-selector, .information {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .calculator input[type="number"] {
+        width: calc(100% - 20px);
+        margin-right: 0;
+        border: 1px solid #ccc; /* Добавляем обводку */
+        border-radius: 5px; /* Закругляем углы */
+        padding: 5px; /* Добавляем отступы внутри поля ввода */
+    }
+}
+
+/* Медиа-запрос для устройств с шириной экрана меньше 576px (таких как мобильные телефоны) */
+@media screen and (max-width: 576px) {
+    .container, .calculator, .currency-selector, .information {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .container input[type="number"], .calculator input[type="number"] {
+        width: calc(100% - 20px);
+        border: 1px solid #ccc; /* Добавляем обводку */
+        border-radius: 5px; /* Закругляем углы */
+        padding: 5px; /* Добавляем отступы внутри поля ввода */
+    }
+}
